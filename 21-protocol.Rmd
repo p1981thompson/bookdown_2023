@@ -1,0 +1,4 @@
+#	A template for a research protocol {#protocol}
+`r include_image("images/logo_alone_new.png")`
+
+blahblahblah

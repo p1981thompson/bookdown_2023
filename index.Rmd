@@ -1,0 +1,60 @@
+--- 
+title: "Evaluating what works"
+author: "Dorothy V M Bishop and Paul A Thompson"
+date: "`r Sys.Date()`"
+site: bookdown::bookdown_site
+documentclass: book
+bibliography:
+- book.bib
+- packages.bib
+biblio-style: apalike
+link-citations: yes
+description: Introduction to methods for evaluating effectiveness of non-medical interventions
+---
+```{r echo=F}
+require(bookdownplus)
+```
+
+# Preface {-}
+<!---- for include_image you need bookdownplus package-->
+\markboth{Preface}{} <!---- from stack overflow - attempt to fix problem with bookdown missing chapter headings, not sure if it works -->
+\vspace{0.1in}
+
+<!---- Useful information on bibtext formatting from Zotero is here: https://retorque.re/zotero-better-bibtex/citing/ -->
+
+<center>
+`r include_image("images/logo_title_new.png")`
+</center>
+\vspace{0.1in}
+
+## Why did we write this book? {-}
+
+Those who work in allied health professions aim to make people's lives better. Often, however, it is hard to know how effective we have been: would change have occurred if we hadn't intervened? Is it possible we are doing more harm than good? To answer these questions and develop a body of knowledge about what works, we need to evaluate interventions.  
+
+In medicine, practitioners who wish to evaluate treatments typically have access to expert statisticians and methodologists, who can advise them on the most efficient research designs and up-to-date analyses. They may also be able to access substantial amounts of funding to cover the salaries of experienced trials personnel. However, in many fields, professionals who administer interventions have limited training in research design, and little or no support from professional statisticians or methodologists. 
+
+In this book, the focus will be on interventions designed to improve speech, language and literacy, reflecting our own area of research interest.  
+
+As we shall see, demonstrating that an intervention has an impact is much harder than it appears at first sight. There are all kinds of issues that can arise to mislead us into thinking that we have an effective treatment when this is not the case. Much of the attention of methodologists has focused on how to recognise and control for unwanted factors that can affect outcomes of interest. But psychology is also important: it tells us that own human biases can be just as important in leading us astray. Good, objective intervention research is vital if we are to improve the outcomes of those we work with, but it is really difficult to do it well, and to do so we have to overcome our natural impulses to interpret evidence in biased ways.
+
+## Who is this book for? {-}
+
+The inspiration for the book came from interactions with speech and language therapists (known as speech-language pathologists or logopeds outside the UK), and the illustrative cases are from that discipline, but the basic principles covered here are relevant for any field where a practitioner aims to influence outcomes of those they work with. This includes allied health professions and education.  Training in most professions allied to health and education does not usually include much instruction in research methodology and statistics - particularly as this relates to evaluation of interventions, which is a complex and thorny topic. It seemed, therefore that there was a need for a basic text that would explain the rationale and potential pitfalls of intervention research, as well as providing a template for good practice in the evaluation and design of intervention studies. 
+
+## What is covered? {-}
+
+This book is not a how-to-do-it manual, so much as a why-to-do-it. Our main goal is to instill in the reader awareness of the numerous sources of bias that can lead to mistaken conclusions when evaluating interventions. Real-life examples are provided with the aim of providing an intuitive understanding of these issues. Of course, it is not much use telling people what _not_ to do if you don't also give guidance on approaches that are effective. We will illustrate ways in which different research designs can overcome problems, but it is beyond the scope of this book to give detailed instructions on how to implement different methods: instead, we will point readers to other sources that give more in-depth information. 
+
+We expect that some readers will have little or no background in statistics. Lack of statistical training is a massive obstacle to practitioners who want to do intervention research: it not only makes design and analysis of a study daunting, but it also limits what a potential researcher can take from the existing literature. This book should be seen as complementing rather than substituting for a technical introduction to statistics. Many readers may be reluctant to study statistics in more depth, but it is hoped that the account given here will give them confidence to approach statistics in the published literature with a more critical eye, to recognise when the advice of a professional statistician is needed, and to communicate more effectively with statisticians. We recommend the open source text [Statistical Thinking for the 21st Century](https://github.com/statsthinking21/statsthinking21) as a complement to this book for those who wish to learn more about statistics.  
+
+Intervention research is a branch of science, and you can't do good science without adopting a critical perspective – to the research of yourself as well as others. We hope this book will make it easier to do that and so to improve intervention research in a wide range of non-medical fields. 
+
+## Acknowledgements {-}
+We owe a huge debt of gratitude to Yihue Xie, whose work developing the [_bookdown_ package](https://bookdown.org/) made this book possible. It is no exaggeration to say that we would not have attempted to write a book on this topic if we hadn't had _bookdown_ to make it easy. The book [ModernDive: Statistical Inference via Data Science](https://moderndive.com/) by Chester Ismay and Albert Y. Kim was also highly influential in demonstrating what could be done with _bookdown_, and we frequently visited their code to check out ideas for formatting and packaging information.  
+Our thanks also to James Pustejovsky whose recommendations were helpful in relation to single case designs. 
+
+## Feedback and contributions {-}
+One of the good things about an online book is that it can remain a work in progress for some time, giving readers the opportunity to provide suggestions and corrections. We can't guarantee to respond promptly (DVB is retired and PT has a demanding job!), but we encourage readers familiar with github to send pull requests with suggestions for changes, 
+
+
+_Dorothy Bishop \& Paul Thompson_
