@@ -268,14 +268,14 @@ p1<-ggplot(data = mydata, aes(x = x, ymin = 0, ymax = dh0, fill = area)) +
   geom_ribbon(alpha=0.5) +
   geom_line(aes(y = dh0)) +
   geom_vline(xintercept = z, linetype = 'dashed') +
-  theme_bw()+ylab("") +theme(legend.title = element_blank(),legend.text = element_text(c("Alpha","")))+ scale_fill_manual(labels = c("","Alpha"),values=c("white","red"))+
+  theme_bw()+ylab("") +theme(legend.title = element_blank(),legend.text = element_text("Alpha"))+ scale_fill_manual(labels = "Alpha",values=c("white","red"))+
   annotate(geom = 'text', x = z+0.2, y = 0.15, colour="red", label = 'Type I Error\n (Alpha)', hjust = -0.2)+annotate(geom = 'text', x = -2, y = 0.3, label = 'Null, H0\nMean = 0')+xlab("")+theme(legend.position = "none")+ggtitle("NULL DISTRIBUTION")
 
 p2<-ggplot(data = mydata, aes(x = x, ymin = 0, ymax = dh1, fill = area)) +
   geom_ribbon(alpha=0.5) +
   geom_line(aes(y = dh1)) +
   geom_vline(xintercept = z, linetype = 'dashed') +
-  theme_bw()+ylab("") +theme(legend.title = element_blank(),legend.text = element_text(c("Power","Type II (Beta)")))+ scale_fill_manual(labels = c("Type II (Beta)","Power"),values=c("Blue","yellow"))+
+  theme_bw()+ylab("") +theme(legend.title = element_blank())+ scale_fill_manual(values=c("Blue","yellow"))+
   annotate(geom = 'text', x = -0.25, y = 0.1, label = 'Type II \nError (Beta)', hjust = -0.1) +
   annotate(geom = 'text', x = z+0.2, y = 0.1, label = 'Power\n (1-Beta)', hjust = -0.01)+
   annotate(geom = 'text', x = -2, y = 0.3, label = 'Alternative, H1\nMean = 1')+xlab("")+theme(legend.position = "none")+ggtitle("ALTERNATIVE DISTRIBUTION")
@@ -310,6 +310,7 @@ dh0 <- dnorm(x, 0, 1/sqrt(n))
 dh1 <- dnorm(x, mha, 1/sqrt(n))
 mydata<-data.frame(x,dh0,dh1) %>% mutate(area = x >= z)
 
+#NB warning about vectorised input to labels in ggplot - i corrected this in figures about but screwed up when I tried to do it with these. Problem is where you have element.text followed by a vector. Should be possible to fix. Need to do for p1 and p2 
 
 p1<-ggplot(data = mydata, aes(x = x, ymin = 0, ymax = dh0, fill = area)) +
   geom_ribbon(alpha=0.5) +
@@ -334,7 +335,7 @@ ggarrange(p1, p2, ncol = 1, nrow = 2)
 
 The shaded areas on the density plots directly relate to the concepts outlined above: power, type I, and type II errors. When the sample size increases, the standard error (SE) reduces.  We notice that the type I error rate (area in red) is proportionally the same at 5%, but we see a change in the two remaining quantities, power and type II error rate. This is because these quantities are linked. The area under the density curve must always remain at 1, so proportionally, we can calculate the power as 1-$\beta$. We can visually see this in both figures by looking at the specified areas for the alternative distribution.  
   
-If you are finding this all quite confusing, don't worry. This is complicated and even those who have statistical training can find it challenging [@bishop2022]. The most important points to take away from these examples are that:  
+If you are finding this all quite confusing, don't worry. This is complicated and even those who have statistical training can find it challenging [@bishop2022a]. The most important points to take away from these examples are that:  
 - Statistical power depends on the sample size and the effect size, as well as the level of $\alpha$  
 - With small samples, studies often have low power, meaning that even if there is a real effect, there may be little chance of detecting it.   
 - A p-value greater than .05 does not mean the null hypothesis is true.
