@@ -24,9 +24,10 @@ library(citr)
 
 ## What is a cluster RCT? 
 
-In some situations, allocation of intervention can be problematic due to pragmatic constraints; for example, for a whole-class intervention, it may be disruptive to split students within each class into intervention and control groups. A potential solution is to use cluster trials, where the allocation to intervention is performed at the group level. We can designate clusters that would naturally occur together, for example, school classes, patients under the care of a particular medical practice or a specific therapist, or perhaps by geographic location (county, district or NHS trust).
+In some situations, allocation of intervention can be problematic due to pragmatic constraints; for example, for a whole-class intervention, it may be disruptive to split students within each class into intervention and control groups. A potential solution is to use cluster trials, where the allocation to intervention is performed at the group level. We can designate clusters that would naturally occur together, for example, school classes, patients under the care of a particular medical practice or a specific therapist, or perhaps by geographic location (county, district or NHS trust). Figure \@ref(fig:cluster-diag) illustrates the logic. 
 
-```{r, cluster_diag,echo=FALSE,warning=F,message=F}
+
+```{r, cluster-diag,echo=FALSE,warning=F,message=F,fig.cap='In the Individual RCT, location is irrelevant and cases are assigned to intervention at random. In the Cluster RCT, there are four geographical clusters, two of which are randomly assigned to each intervention group'}
   library(ggplot2)
 library(ggimage)
 library(maptools)
@@ -65,7 +66,7 @@ df<-data.frame(x2=c(-4,-2,8,10.5),x1=c(-1.5,-1.5,9.5,9.5),y1=c(51,51,51,51),y2=c
 # plot2
 ggplot() + geom_path(aes(long, lat, group=group), data=worldUk, color="grey", fill=NA) + geom_path(aes(long2, lat, group=group), data=worldUk, color="grey", fill=NA)+coord_equal() + geom_image(data=d,aes(x=x,y=y,image=image), size=.012,color="blue") + geom_image(data=d,aes(x=x2,y=y,image=image,colour=cluster), size=.012) + xlim(-10,15) + ylim(42,61) + geom_polygon(data=polys,aes(x=x,y=y,group=id),colour="black",fill='white') + geom_image(data=d2,aes(x=x,y=y,image=image), size=.012,color="blue") + geom_image(data=d2,aes(x=x2,y=y,image=image,colour=cluster), size=.012) + annotate(geom="text",x=-5.5, y=49, label="Control")+ annotate(geom="text",x=0.5, y=49, label="Treatment")+ annotate(geom="text",x=6.5, y=49, label="Control")+ annotate(geom="text",x=12.5, y=49, label="Treatment")+geom_segment(aes(x = x1, y = y1, xend = x2, yend = y2),colour="red",arrow = arrow(length = unit(0.03, "npc")), data = df)+ annotate(geom="text",x=8.4, y=61, label="CLUSTER RCT") + annotate(geom="text",x=-3.7, y=61, label="INDIVIDUAL RCT")+ theme_nothing()+ theme(legend.position = "none")
 }
-
+#NB - DB cropped this manually - if possible, we need to remove extraneous white space by code
 if(makemaps==0){
   knitr::include_graphics('images/mapplots.jpg') #read in previously created map
 }
