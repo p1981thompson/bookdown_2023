@@ -3,13 +3,12 @@
 
 ```{r initialisefigs1,echo=FALSE,message=FALSE,warnings=FALSE}
 require(ggplot2)
-require(bookdown)
 require(tidyverse)
-require(bookdownplus)
 library(kableExtra)
 library(knitr)
 ## these settings taken from Modern Dive
-options(scipen = 99, digits = 3)
+options(scipen = 99, digits = 3, warnings=F)
+devtools::install_github("crsh/citr")#see https://github.com/crsh/citr
 
 #nb to preview this chapter, preview_chapter("01-intro.Rmd")
 
