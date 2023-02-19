@@ -107,9 +107,11 @@ In many respects, this design resembles a regular RCT, and has some of the same 
 There is, however, some debate around usefulness of wait-list designs in the psychological and behavioural interventions literature [@elliott2002; @cunningham2013; @furukawa2014]. In particular, @cunningham2013 presented results that showed this design can potentially, artificially inflate intervention effect estimates. When a participant knows that they have to wait, this can induce  a state of "resentful demoralisation", which can lead to poorer outcome - a kind of "nocebo" effect. Having said that, Cunningham et al noted that negative reactions to being on a wait list are likely to depend on the specific context. Studies showing "nocebo" effects have tended to focus on clinical psychology interventions, where distressed patients have been actively seeking help and may become disconsolate or irritated at having to wait. 
 
 
-@calder2021 used a delayed crossover design to study the effect of an intervention designed to improve use of part tense -ed endings in children with Developmental Language Disorder. As well as comparing two groups who received intervention at different time points, they also measured performance on a set of probe tasks. One of these assessed performance on past tense endings - the grammatical element that the training had focused on. Another assessed use of a different verb ending (3rd person singular), which was related but had not been trained. The third probe tested mastery of possessive 's.  This approach relates to methods used in single-case designs (Chapter \@ref(singlecase)), where additional evidence for intervention effects is obtained by illustrating that they are specific to the skills that are trained.
+@calder2021 used a delayed crossover design to study the effect of an intervention designed to improve use of past tense -ed endings in children with Developmental Language Disorder. As well as comparing two groups who received intervention at different time points, they also compared different outcome measures. Here, for simplicity, we restrict consideration to the outcome measure of past tense endings - the grammatical element that the training had focused on. (In Chapter \@ref(Single)) we look at how the same study incorporated aspects of single case design to obtain  additional evidence that intervention benefits are specific to the skills that are trained).  
+Results are shown in Figure \@ref(fig:calderfig). 
 
-```{r calderfig, echo=F,fig.leg = "Mean % correct in delayed cross-over study by Calder et al, 2021 (data plotted from Table 2)."}
+```{r calderfig, echo=F,fig.cap = "Mean % correct in delayed cross-over study by Calder et al, 2021 (data plotted from Calder et al's Table 2)."}
+
 
 cdat <- read.csv("data/Calder/calder_xover.csv")
 wantrows <- c(1,5,7,9,13,15)
@@ -136,7 +138,7 @@ vpos<-c(75,10)
 hpos <-c(4.5,6.4)
  for (g in 1:2){
     thisdat<-clong[clong$Group==g,]
-    for (o in 1:3){
+    for (o in 3:3){  #just the treated construction 
        plotdat<-thisdat[thisdat$Outcomes==levels(clong$Outcomes)[o],]
        plotdat<-plotdat[!is.na(plotdat$measurement),]
        lines(x=plotdat$phase,y=plotdat$measurement,col=mycols[g],lty=mylines[o],type='b',pch=mypch[o])
@@ -148,71 +150,16 @@ segments(1,68,2,68,col='blue',lwd=2)
 segments(1,3,4,3,col="red",lwd=2)
 
 # Add a legend
-legend("topright", 
-  legend = c("past -ed","3rd pers -s","possessive 's"), 
-  pch = c(19,0,2), 
-  inset = c(0.01, 0.01))
+# legend("topright", 
+#   legend = c("past -ed","3rd pers -s","possessive 's"), 
+#   pch = c(19,0,2), 
+#   inset = c(0.01, 0.01))
 ```
 
-
-
-
-Results are shown in Figure \@ref(fig:calderfig). The filled circles show results on the trained past tense -ed items, illustrating nicely the way in which this design can combine sources of evidence that individually might not be compelling, but together create a coherent picture of an intervention effect. First, we have the improvement in group 1 when phases 4-5 (post-intervention) are compared with phases 1-2 (baseline). 
+First, we have the improvement in group 1 when phases 4-5 (post-intervention) are compared with phases 1-2 (baseline). 
 Next, look at Group 2, in red. They provide two further pieces of evidence. First we can use them as a replication sample for Group 1, considering the change from phase 4-5 (baseline) to phase 6-7 (post-intervention): although the improvement on past-tense items is not as big as that seen in Group 1, it is evident by inspection, and again contrasts with a lack of improvement on untrained constructions. Finally, we can contrast the two groups at phases 4-5. This is more like the contrast performed in a standard RCT: a between-subjects contrast between treated vs untreated groups at the same time point. Here, the combined evidence from between- and within-subjects comparisons provides converging support for the effectiveness of the intervention. 
-Nevertheless, we may wonder how specific the intervention effect is. Could it be a placebo effect, whereby children's scores improvement simply because they have the individual attention of an enthusiastic therapist? Maybe the children would have improved just as much if the therapist had simply spent the time reading to them, or playing with them. We will discuss in Chapter \@ref(singlecase) how we can evaluate the specificity of an effect by considering outcomes for the two untrained constructions (3rd person singular and possessive 's), shown as unfilled figures. For now we note that they do not show the same improvement as for the trained construction.  
+Nevertheless, we may wonder how specific the intervention effect is. Could it be a placebo effect, whereby children's scores improvement simply because they have the individual attention of an enthusiastic therapist? Maybe the children would have improved just as much if the therapist had simply spent the time reading to them, or playing with them. In Chapter \@ref(Single) we move on to consider outcomes for the untrained constructions, which provide evidence against that interpretation.
 
-```{r calderstages, echo=F,fig.leg = "Mean % correct in delayed cross-over study by Calder et al, 2021 (data plotted from Table 2)."}
-#plotting just subsets of data for demo in talk
-cdat <- read.csv("data/Calder/calder_xover.csv")
-wantrows <- c(1,5,7,9,13,15)
-cdat <-cdat[wantrows,]
-#reorder cols to facilitate conversion
-cdatwide <- cdat[,c(1,2,3,5,7,9,11,13,15,4,6,8,10,12,14,16)]
-clong <- gather(cdatwide, phase, measurement, T1:T7, factor_key=TRUE)
-clong$OutcomesGroup <-paste0(clong$Group,clong$Outcomes)
-clong$OutcomesGroup<-as.factor(clong$OutcomesGroup)
-clong$Outcomes <- as.factor(clong$Outcomes)
-clong$phase <- as.factor(clong$phase)
-levels(clong$phase)=1:7
-clong$Group <- as.factor(clong$Group)
-
-  
- #Try with base R!
-plot(1, type = "n",                         # Remove all elements of plot
-     xlab = "Phase", ylab = "% Correct",
-     xlim = c(1, 7), ylim = c(0, 80))
-mycols <- c('blue','red')
-mylines <- c(1,2,3)
-mypch<-c(2,0,19)
-vpos<-c(75,10)
-hpos <-c(4.5,6.4)
-
-o1 <- c(3,1,1)
-o2 <- c(3,3,3)
-g<-c(1,1,2)
-for(p in 2:2){
- for (g in 1:g[p]){
-    thisdat<-clong[clong$Group==g,]
-    for (o in o1[p]:o2[p]){
-       plotdat<-thisdat[thisdat$Outcomes==levels(clong$Outcomes)[o],]
-       plotdat<-plotdat[!is.na(plotdat$measurement),]
-       lines(x=plotdat$phase,y=plotdat$measurement,col=mycols[g],lty=mylines[o],type='b',pch=mypch[o])
-    }
-    text(1.5,vpos[g],paste0("Group ",g,":\n baseline"),col=mycols[g])
-    text(hpos[g],vpos[g],paste0("Group ",g,":\n post-intervention"),col=mycols[g])
- }
-segments(1,68,2,68,col='blue',lwd=2)
-if(p>2){
-segments(1,3,4,3,col="red",lwd=2)
-}
-
-# Add a legend
-legend("topright", 
-  legend = c("past -ed","3rd pers -s","possessive 's"), 
-  pch = c(19,0,2), 
-  inset = c(0.01, 0.01))
-}
-```
 
 
 ## Class exercise  
@@ -228,6 +175,7 @@ When planning a study of this kind, the natural tendency is to assume that every
 2. Take a look at [this study](https://eprints.whiterose.ac.uk/112815/1/Varley%20et%20al_Computerized%20therapy%20for%20AOS.pdf) by @varley2016, who used a self-administered computerised intervention with stroke patients who had apraxia of speech. The intervention group did training on speech production and perception for 6 weeks, whereas the active controls were given a sham intervention that involved visuospatial processing, and were told it was designed to improve their attention and memory. After the initial intervention period, there was a 4 week break, and then the two interventions were swapped over for another 6 weeks. 
 - Does this approach provide better control of internal validity than the waitlist control method used by @calder2021?  
 - Are there downsides to the use of a 'sham' intervention?  
+
 
 
 
