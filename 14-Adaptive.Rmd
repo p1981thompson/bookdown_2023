@@ -28,7 +28,7 @@ https://academy.pubs.asha.org/2013/11/need-for-adaptive-research-designs-in-spee
 https://www.youtube.com/watch?v=ythfdGd63hU
 
 -->
-Suppose we have two potential school-based reading interventions for dyslexic children aged 9-11, one computer game that trains sight word recognition and one phonics-based. The lead researcher wishes to test both interventions but has limitations on funding, so can only run one trial rather than two independent trials. The researcher also has some idea that the phonics-based intervention is more likely to be effective than the other. There is a substantial body of literature highlighting significant effect of the phonics intervention but in younger typically developing children, whereas the computer game intervention is novel and relatively untested.
+Suppose we have two potential school-based reading interventions for dyslexic children, one computer game that trains sight word recognition and one phonics-based. The lead researcher wishes to test both interventions but has limitations on funding, so can only run one trial rather than two independent trials. The researcher also has some idea that the phonics-based intervention is more likely to be effective than the other. There is a substantial body of literature highlighting significant effect of the phonics intervention but in younger typically developing children, whereas the computer game intervention is novel and relatively untested.
 
 A trial design is proposed that allows both interventions to be run in parallel with the addition of a control group for reference (who receive usual planned teaching); this is known as a three-arm trial (two interventions and a control). The researcher now has a further design decision to make, whether to use a traditional fixed design or an adaptive trial. 
 
@@ -36,7 +36,7 @@ A traditional randomised control trial (without adaption) requires that data are
 
 If we return to our three-arm trial for reading interventions. The researcher has started data collection and has gathered some initial teacher feedback that the novel computer game intervention seems to be hampering progress in those individuals.  In a traditional trial there would be no other course of action but to let the trial run its course and evaluate as planned. This might lead to the computer intervention showing poor results or even having a negative impact on those children, confirming the teacher's concerns. Alternatively, if the researcher had chosen an adaptive design the teacher's observations could have been assessed part way through the trial and the computer based intervention dropped from the study if interim analyses showed a negative impact of the intervention. As a consequence, the remaining individuals could change onto the phonics based intervention if the interim analyses showed positive results.  
 
-```{r flow1, echo=FALSE, include=TRUE,echo=F,message=F,warning=F}
+```{r flow1, echo=F, message=FALSE, warning=FALSE, include=TRUE}
 
 tes1<-DiagrammeR::grViz("
 digraph rmarkdown {
@@ -62,19 +62,24 @@ tes1 %>%export_svg %>% charToRaw %>% rsvg_png("images/flow_16_1.png")
 ```
 
 
-```{r adaptiveflow, fig.align="center", fig.height=8,echo=FALSE,fig.cap="Flow diagram of adaptive trial"}
+```{r adaptiveflow, fig.align="center", fig.height=8,echo=FALSE,out.width="50%",fig.cap="Flow diagram of adaptive trial"}
 knitr::include_graphics("images/flow_16_1.png")
 #Not sure why the height and centre commands do not work - altering height in previous chunk also seems to have no effect!
 ``` 
 
-The adaptive design, as the name suggests, allows for modifications to certain aspects of the design as the trial progresses (see Figure \@ref(fig:adaptiveflow), taken from @pallmann2018). Interim analyses are used to assess whether modifications are required. These pre-planned assessments can be used to make several pre-specified changes, if required. Figure 13.2 [from @thorlund2018] shows some of the commonly used adaptive trial designs, others include: changing the amount or frequency of intervention received, and stopping intervention early if not effective or adverse effects observed.  
+The adaptive design, as the name suggests, allows for modifications to certain aspects of the design as the trial progresses (see Figure \@ref(fig:adaptiveflow), taken from @pallmann2018). Interim analyses are used to assess whether modifications are required. These pre-planned assessments can be used to make several pre-specified changes, if required. Figure \@ref(fig:adaptivegif) [from @thorlund2018] shows some of the commonly used adaptive trial designs, others include: changing the amount or frequency of intervention received, and stopping intervention early if not effective or adverse effects observed.  
 
 
 
-```{r adaptivegif, fig.align="center", echo=FALSE,fig.caption="Commonly used adaptive designs"}
+
+```{r adaptivegif, echo=F, fig.align="center",out.width="90%",fig.cap="Commonly used adaptive designs"}
 knitr::include_graphics("images/adaptive_designs.gif")
-``` 
-A presentation by @ludlow2013 illustrated the potential of adaptive designs in speech and language therapy. She noted that most trials of swallowing therapies used a similar schedule, regardless of the type of therapy: the patient was seen 1 hour a day for 10 days, giving a total exposure of 10 hours. Alternatively, some outpatient clinics would have patients coming in for one hour per week, for 2-4 weeks. Ludlow suggested that before embarking on a large and costly RCT it would make sense to do adaptive trials to find out what was the optimal schedule - would longer sessions be more effective, or would it be better to have more frequent, shorter sessions? Were there benefits from combining intervention approaches? 
+
+```
+
+## Class exercise  
+A presentation by @ludlow2013 noted the potential of adaptive designs in speech and language therapy. She noted that most trials of swallowing therapies used a similar schedule, regardless of the type of therapy: in hospital, the patient was seen 1 hour a day for 10 days, giving a total exposure of 10 hours. Alternatively, some outpatient clinics would have patients coming in for one hour per week, for 2-4 weeks. Ludlow suggested that before embarking on a large and costly RCT it would make sense to do adaptive trials to find out what was the optimal schedule.  
+Suppose you had access to 30 patients who were willing to participate in a clinical trial of swallowing therapy. You decide it's worth using an adaptive design to find out optimal conditions for treatment before embarking on a larger trial. You have the potential to vary the intensity of intervention (how many sessions per day or week), and the total number of sessions. Assuming you had the resources to try any combination of these, consider how you might proceed to home in on the optimal combination.  
 
 <!--
 ## More niche trial designs
@@ -95,4 +100,4 @@ The Nahum-Shani is a v useful introduction, but I do worry that this approach do
 DB - I think we can either just have a custom block listing these, explaining in one sentence what they are good for, and adding links to places where they are explained, or omit - but I don't know about them so if they could be useful for SLTs we could expan
 -->
 
-??EXERCISE FOR THIS CHAPTER
+
