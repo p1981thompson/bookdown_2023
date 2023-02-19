@@ -17,7 +17,7 @@ library(rsvg)
 
 library(kableExtra)
 library(knitr)
-library(citr)
+
 ```
 `r include_image("images/logo_alone_new.png")`
 
