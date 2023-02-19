@@ -34,7 +34,7 @@ Accordingly, we provide a simple summary below, adapted for this purpose. We foc
 #### History of Cochrane{-}
 <div id="custom">The organisation now just known as Cochrane has its roots in the UK Cochrane Centre, which was founded in 1992 by Iain Chalmers and colleagues, with the aim of ensuring that medical practitioners should have access to up-to-date and objective information about results of clinical trials. Chalmers and colleagues focused on research related to management of pregnancy and childbirth, creating a database of perinatal trials which could be used as the basis for a series of systematic reviews.  
 The value of this approach was increasingly appreciated, with the Cochrane Collaboration being formed in 1993, with 77 people from nine countries, growing over 25 years to 13,000 members and 50,000 supporters from more than 130 countries.  Cochrane reviews are available online and are revised periodically to provide up-to-date summary information about a wide range of areas, principally health interventions, but also diagnostic testing, prognosis and other topics.</div> 
-
+</p> 
 ## Steps in the literature review
 
 The following steps are adapted from @hemingway2009's simplified account of how to conduct a systematic review:  
@@ -61,14 +61,14 @@ The next step is a screening process, which typically whittles down the list of 
 
 In a freestanding systematic review, it is customary to provide a flow chart documenting the numbers of papers considered at each stage. A template for a standard flow chart can be downloaded from the [PRISMA website](http://prisma-statement.org/prismastatement/flowdiagram.aspx).
 
-```{r prismachart, echo=F,fig.align="center", fig.cap="PRISMA flowchart from @dipper2020"}
+```{r prismachart, echo=F,fig.align="center", fig.cap="PRISMA flowchart from @dipper2020",out.width = "90%"}
 knitr::include_graphics("images/dipper2020fig.png")
 ``` 
 
 Figure \@ref(fig:prismachart) shows a completed flowchart for a study of intervention to improve discourse in patients with aphasia; the initial search found 334 records, but on further screening, only 25 of these met eligibility criteria. The need to screen considerably more articles than the final included set is one factor that makes systematic reviews so time-consuming. It may be possible to enlist students to help with screening. For those who are familiar with the computer language R, the [_metagear_ ](https://github.com/mjlajeunesse/) package in R is very useful for speeding up screening, by automating part of the process of extracting and evaluating abstracts for suitability.
 
 ### Assess the quality of each study included  
-At this stage the methodology of each study is scrutinised to see whether it meets predefined quality criteria. Some  studies may be excluded at this stage; for others, a rating is made of quality so that higher weighting can be given to those with high quality. Statistical power typically is a major factor in quality ratings, as null results from underpowered studies are not very informative (see Chapter \@ref(power)). 
+At this stage the methodology of each study is scrutinised to see whether it meets predefined quality criteria. Some  studies may be excluded at this stage; for others, a rating is made of quality so that higher weighting can be given to those with high quality - i.e., those that have been designed to minimise the kinds of bias we have focused on in this book.  
 
 A wide range of checklists has been developed to help with quality appraisal, some of which are lengthy and complex. The [questionnaires available from the Centre for Evidence-Based Management (CEBMa)](https://cebma.org/resources-and-tools/what-is-critical-appraisal/) are reasonably user-friendly and include versions for different study types. 
 
