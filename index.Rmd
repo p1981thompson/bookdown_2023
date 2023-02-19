@@ -13,6 +13,7 @@ description: Introduction to methods for evaluating effectiveness of non-medical
 ---
 ```{r echo=F}
 require(bookdownplus)
+require(bookdown)
 ```
 
 # Preface {-}
