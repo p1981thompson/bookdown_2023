@@ -97,7 +97,7 @@ knitr::kable(dt13,escape = F, align = "c", booktabs = T,caption="Steps to assess
 
 ```
 
-```
+
 
 When designing a trial of a behavioural intervention in allied health or education, the distinction between efficacy and effectiveness is highly pertinent, and researchers need to ask themselves whether the goal is to find out what the intervention can achieve under tightly-controlled, optimal circumstances, or whether it is to test its effectiveness in a more naturalistic setting. If the decision is made to focus on "pure" cases, this may allow a more tightly controlled efficacy trial, but then questions may be raised about the generalisability of results to the broader population.  
 

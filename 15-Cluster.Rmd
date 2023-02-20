@@ -92,7 +92,7 @@ It may not be obvious why clustering should require a different analytic approac
 
 Statisticians have developed sophisticated methods of analysis for dealing with the dependency among individuals within the same cluster [@campbell2014]. It is worth taking advice from a statistician if you are contemplating doing such a trial. 
 
-## Classroom exercise
+## Class exercise
 Look at this account of a cluster RCT of "growth mindset" intervention by the Education Endowment Foundation from [this report](https://educationendowmentfoundation.org.uk/public/files/Projects/Evaluation_Reports/Changing_Mindsets.pdf).  The project involved 101 schools and 5018 pupils across England, 
 assigned to either intervention or control groups.
 

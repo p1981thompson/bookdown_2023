@@ -16,7 +16,7 @@ options(knitr.kable.NA = "")
 # Set random number generator see value for replicable pseudorandomness.
 set.seed(76)
 ```
-```
+
 `r include_image("images/logo_alone_new.png")`
 
 In this chapter we consider how to select people for the experimental and control groups of an intervention study. This is a key element of a randomised controlled trial (RCT), which is widely regarded as a gold standard approach to the evaluation of interventions. The core idea is that once a target population has been identified for study, the experimenter allocates participants to intervention and control groups in a way that minimises bias. This turns out to be much harder than you might imagine.

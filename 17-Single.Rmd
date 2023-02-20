@@ -1,38 +1,35 @@
-#	Single case designs {#Single} 
+#	Single case designs {#Single}
 
+<!--- This level § heading is NOT RECOGNISED by Bookdown. I have tried cutting out sections of the chapter to identify what causes it to baulk but it is an inconsistent error. We may have to wait and fix this manually at a later stage if we can't get it to work. I can get the level 1 heading to be identified and compile if I just have the first 2 chunks of the chapter, but if I add more it throws inconsistent errors, and the index just misses this chapter. I have tried changing the chapter name. -->
 
+`r include_image("images/logo_alone_new.png")`
 
-
-
-```{r, message=F,warning=F,echo=FALSE}
+```{r message=F,warning=F,echo=FALSE}
 library(tidyverse)
 library(kableExtra)
 library(knitr)
 library(ggpubr)
-library(flextable)
 library(ggplot2)
 library(forcats)
 library(hablar)
-
-
 ```
-`r include_image("images/logo_alone_new.png")`
 
-<!---see https://arxiv.org/abs/1403.4309-->
+
+
+The single case design, also known as N-of-1 trial, or small N design, is a commonly used intervention design in speech and language therapy, clinical psychology, education, and neuropsychology, including aphasia therapy [@perdices2009]. The single case design may be regarded as an extreme version of a _within-subjects_ design, where two more more conditions are compared within a single person. This type of trial is sometimes dismissed as providing poor quality evidence, but a well-designed single case trial can be an efficient way to obtain an estimate of treatment efficacy in an individual. Very often, a set of single case trials is combined into a *case series* (see below). It is important to note that a single case trial is not a simple case report, but rather a study that is designed and analysed in a way that controls as far as possible for the kind of unwanted influences on results described in chapters 2-5.  
+
 ## Logic of single case designs  
-The single case design, also known as N-of-1 trial, or small N design, is a commonly used intervention design in speech and language therapy, clinical psychology, education, and neuropsychology, including aphasia therapy [@perdices2009]. The single case design may be regarded as an extreme version of a _within-subjects_ design, where two more more conditions are compared within a single person. This type of trial is sometimes dismissed as providing poor quality evidence, but a well-designed single case trial can be an efficient way to obtain an estimate of treatment efficacy in an individual. Very often, a set of single case trials is combined into a *case series* (see below). It is important to note that a single case trial is not a simple case report, but rather a study that is designed and analysed in a way that controls as far as possible for the kind of unwanted influences on results described in chapters 2-5. 
-
 Table \@ref(tab:scdlogic) compares the logic of the standard RCT and single case designs.
 
-```{r scdlogic,echo=F,include=T,tab.cap= "How intervention vs control is allocated in different study designs"}
+```{r scdlogic,echo=F,include=T}
+options(kableExtra.html.bsTable = T)
 Design <- c('RCT: Multiple participants','Single case: Multiple time-points','Single case: Multiple outcomes')
-Participants <- c('+','-','-')
-Time <- c('-','+','-')
-Outcome <- c('-','-','+')
+Participants <- c('Yes','-','-')
+Time <- c('-','Yes','-')
+Outcome <- c('-','-','Yes')
 mydf <- data.frame(cbind(Design,Participants,Time,Outcome))
-ftable<-flextable(mydf)
-ftable <- autofit(ftable)
-ftable
+knitr::kable(mydf,escape = F, align = "c", booktabs = T,caption="How intervention vs control is allocated in different study designs") %>%
+  kable_styling(c("striped", "bordered"), latex_options = "striped", full_width = F) 
 
 ```
 
@@ -141,8 +138,8 @@ In effect, we need to use the same kind of logic that we saw in Chapter \@ref(po
 The columns show the effect size as the raw difference in proportion items correct for trained vs untrained words. It is assumed that these two sets were equated for difficulty prior to intervention, and the table shows the difference in proportion correct between the two sets after intervention. So if the initial proportion correct was .3 for both trained and untrained items, but after intervention, we expect accuracy on trained items to increase to .6 and the untrained to stay at .3, then the difference between the two sets after treatment is .3, shown in the 4th column of the table.  We can then read down this column to see the point at which power reaches 80% or more. This occurs at the 4th row of the table, when there are 40 items in each set. If we anticipated a smaller increase in proportion correct for trained items of .2, then we would need 80 items per set to achieve 80% power. 
 
 
-```{r Nitems-power,echo=F,tab.cap="N items per set needed to detect target-control item difference of a given size",warning=F,message=F}
-
+```{r Nitems-power,echo=F,warning=F,message=F}
+options(kableExtra.html.bsTable = T)
 
 clist <- seq(.2,.5,.1) #proportions correct in controls
 Nitem <- seq(10,200,10)
@@ -190,24 +187,23 @@ if(readthisfile==1){
 }
 mytab<-mytab[,1:7]
 colnames(mytab)<-c('N_per_Set','.1','.2','.3','.4','.5','.6')
-ft<-flextable(mytab)
-ft <- add_header_row(
-  x = ft, values = c(" ", "Trained - untrained (proportion correct) difference"),
-  colwidths = c(1, 6))
-ft <- theme_box(ft)
+knitr::kable(mytab,escape = F, align = "c", booktabs = T,caption="N items per set needed to detect target-control item difference of a given size") %>%
+  kable_styling(c("striped", "bordered"), latex_options = "striped", full_width = F) %>%
+  column_spec(c(1), bold = T)
 
-ft
+```
+## Examples of studies using different types of single case design  
+As noted above, single case designs cover a wide range of options, and can vary the periods of observation or the classes of observations made for each individual.  
+
+### A multiple baseline design: Speech and language therapy for adolescents in youth justice.
+Figure \@ref(fig:swainfig) from @swain2020 provides an illustration of the multiple baseline design approach. 
+
+
+```{r swainfig,echo=F,include=T,warning=F,message=F,fig.cap = "Data from one case in the @swain2020 study",out.width="60%"}
+knitr::include_graphics("images/swain_eg.png")
 
 ```
 
-
-
-## Examples of studies using different types of single case design  
-### A multiple baseline design: Speech and language therapy for adolescents in youth justice.
-This figure from @swain2020 provides a neat synopsis of the multiple baseline design approach. 
-
-![Data from one case in the @swain2020 study](images/swain_eg.png)
-  
 The three panels show percentages correct on outcome probes for three skills: spelling-phonics, spelling-morphology and vocabulary. These were targeted sequentially in different sessions, and evidence for intervention effectiveness is obtained when a selective increase in performance is shown for the period during and after intervention.  The open squares give a rating of the adolescent's engagement with the intervention, and the open triangles are scores on a nonword repetition task, that was administered intermittently as a control probe, where no improvement was expected. Note that for all three tasks, there is little or no overlap for scores during baseline and those obtained  during and after intervention. The baseline data establish that although targetted behaviours vary from day to day, there is no systematic upward trend in performance until the intervention is administered. Furthermore, the fact that improvement is specific to the behaviour that is targeted in that session gives confidence that this is not just down to some general placebo effect. 
 
 In the other case studies reported by @swain2020, different behaviours were targeted, according to the specific needs of the adolescents who were studied. 

@@ -8,10 +8,8 @@ library(knitr)
 library(ggpubr)
 
 ```
-<!-- for the wait-list control design, the Burgoyne et al study used previously in RCT chapter could be used to illustrate. 
-this is a more standard cross-over design
-https://eprints.whiterose.ac.uk/112815/1/Varley%20et%20al_Computerized%20therapy%20for%20AOS.pdf
--->
+
+
 `r include_image("images/logo_alone_new.png")`
 
 
