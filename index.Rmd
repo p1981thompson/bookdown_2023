@@ -1,32 +1,33 @@
 --- 
 title: "Evaluating what works"
 author: "Dorothy V M Bishop and Paul A Thompson"
-date: "`r Sys.Date()`"
+date: "`r format(Sys.time(), '%B %d, %Y')`"
 site: bookdown::bookdown_site
 documentclass: book
 bibliography:
 - book.bib
 - packages.bib
 biblio-style: apalike
-link-citations: yes
+link-citations: true
 description: Introduction to methods for evaluating effectiveness of non-medical interventions
 ---
+
 ```{r echo=F}
-require(bookdownplus)
 require(bookdown)
+require(bookdownplus)
 ```
 
 # Preface {-}
 <!---- for include_image you need bookdownplus package-->
 \markboth{Preface}{} <!---- from stack overflow - attempt to fix problem with bookdown missing chapter headings, not sure if it works -->
 \vspace{0.1in}
-
 <!---- Useful information on bibtext formatting from Zotero is here: https://retorque.re/zotero-better-bibtex/citing/ -->
-
 <center>
-`r include_image("images/logo_title_new.png")`
+`r include_image("images/logo_title_new.png")` <!--include_image function is in bookdownplus-->
 </center>
+
 \vspace{0.1in}
+
 
 ## Why did we write this book? {-}
 
@@ -56,6 +57,8 @@ Our thanks also to James Pustejovsky whose recommendations were helpful in relat
 
 ## Feedback and contributions {-}
 One of the good things about an online book is that it can remain a work in progress for some time, giving readers the opportunity to provide suggestions and corrections. We can't guarantee to respond promptly (DVB is retired and PT has a demanding job!), but we encourage readers familiar with github to send pull requests with suggestions for changes, 
+
+
 
 
 _Dorothy Bishop \& Paul Thompson_
