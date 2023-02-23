@@ -305,7 +305,7 @@ On the basis of our experience, we would advise that if you are tempted to use a
 
 ### Mean Length of Utterance
 
-```{r MLU-plot,echo=FALSE,warning=TRUE,message=TRUE,fig.cap='Mean length of utterance (MLU) values for a cohort of 630 children speaking North American English in the Child Language Data Exchange System archive. Recreated from @ratner2016 (data kindly provided by authors)'}
+```{r MLU-plot,echo=FALSE,warning=TRUE,message=TRUE,fig.cap='Mean length of utterance (MLU) values for a cohort of 630 children speaking North American English in the Child Language Data Exchange System archive. Recreated from @ratner2016 (data kindly provided by authors)',out.width="75%"}
 
 #I couldn't find the original data file so have just redone this one
 Age <- c(1.5,2,3,4,5,6)
