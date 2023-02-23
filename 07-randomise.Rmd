@@ -71,10 +71,10 @@ Financial and practical constraints may limit the number of participants in a tr
 We discussed above the possibility that randomised groups might differ in the proportion of males and females, making it difficult to disentangle the effect of the intervention from an effect of sex. There are usually other factors that could influence response to intervention: social and family background, presence of specific medical conditions, or educational attainment. If these are likely to be important, we can try to measure them in advance, but we cannot rule out the possibility that there may be other, unknown, variables that influence the treatment effect.  
 
 <!--I changed schools to cities, because it could be argued cluster approach better for schools, given interactions between children etc-->
-For characteristics that we can measure, stratification is one method that gives us some control, by splitting the allocation according to those variables. For example, suppose we have an intervention for school-aged children aged between 5 and 11 years. We recruit from three different cities: one with a high rate of deprivation, one with a good mix of social backgrounds, and one where most citizens are affluent home-owners. We would anticipate that there might be significant outcome differences in age and potentially differences between cities, so we use stratification to allow for this when we randomize children to intervention and control groups. The scheme would be as shown in Table \@ref(tab:strattablex).
+For characteristics that we can measure, stratification is one method that gives us some control, by splitting the allocation according to those variables. For example, suppose we have an intervention for school-aged children aged between 5 and 11 years. We recruit from three different cities: one with a high rate of deprivation, one with a good mix of social backgrounds, and one where most citizens are affluent home-owners. We would anticipate that there might be significant outcome differences in age and potentially differences between cities, so we use stratification to allow for this when we randomize children to intervention and control groups. The scheme would be as shown in Table \@ref(tab:strattable).
 
 
-```{r strattablex,echo=F,message=F,warning=F, tab.cap = "Randomised sample by strata"}
+```{r strattable,echo=F,message=F,warning=F, tab.cap = "Randomised sample by strata"}
 options(kableExtra.html.bsTable = T)
 
 

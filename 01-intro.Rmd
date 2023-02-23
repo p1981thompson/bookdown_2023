@@ -38,7 +38,7 @@ In our view it matters enormously, for four reasons.
 Showing that an intervention works in an individual case is very hard – especially when dealing with a condition that fluctuates or is self-limiting. In later chapters we shall consider how we can make use of group studies to evaluate interventions, and how single case designs can sometimes give greater confidence that a real effect has been achieved.  But first, it is important to recognise the range of factors that conspire to make it difficult to answer the question "Did I make a difference?" To do this, we need to understand about two factors that can mask or mimic real intervention effects: random error and systematic bias. **Random error** is used to describe influences that do not alter the average outcome, but which just make it liable to vary capriciously from one occasion to the next. **Systematic bias** refers to influences that lead outcomes to move in one direction, which may mimic an intervention effect. 
 
 
-```{r weightplot-2,echo=FALSE, include=TRUE,message=FALSE, warnings=FALSE, fig.cap="Random fluctuations in Bridget Jones' weight, measured to the nearest pound",out.width="75%"}
+```{r weightplot-1,echo=FALSE, include=TRUE,message=FALSE, warnings=FALSE, fig.cap="Random fluctuations in Bridget Jones' weight, measured to the nearest pound",out.width="75%"}
 set.seed(1)  #ensure consistent output
 df <- data.frame(Day=1:14,
                  Weight.lbs=rnorm(14,mean=130,sd=1))
