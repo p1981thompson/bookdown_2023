@@ -1,8 +1,9 @@
-book_filename: "Intervention_bookdown2023"
+book_filename: "Intervention_bookdown2"
 delete_merged_file: true
 new_session: yes
-rmd_files: ["index.Rmd", "01-intro.rmd", "02-Clinical-observations.Rmd","03-reliability.Rmd", "04-nonspecific.rmd", "05-limitations_of_prepost_design.Rmd","06-controlling_unwanted_effects.rmd", "07-randomise.Rmd","08-Experimenter.Rmd", "09-Dropouts.rmd", "10-Power.Rmd","11-phacking.Rmd", "12-RCT.rmd", "13-Drawbacks.Rmd","14-Adaptive.Rmd", "15-Cluster.rmd", "16-Crossover.Rmd","17-Single.Rmd", "18-Pubbias.rmd", "19-Prereg.Rmd","20-Litrev.Rmd", "21-Protocol.rmd"]
+rmd_files: ["index.Rmd", "01-intro.rmd", "02-ClinicalObs.Rmd","03-reliability.Rmd", "04-nonspecific.rmd", "05-prepost.Rmd","06-controls.rmd", "07-randomise.Rmd","08-Experimenter.Rmd", "09-Dropouts.rmd", "10-Power.Rmd","11-phacking.Rmd", "12-RCT.rmd", "13-Drawbacks.Rmd","14-Adaptive.Rmd", "15-Cluster.rmd", "16-Crossover.Rmd","17-Single.Rmd", "18-Pubbias.rmd", "19-Prereg.Rmd","20-Litrev.Rmd", "21-Protocol.rmd"]
 language:
   ui:
     chapter_name: "Chapter "
+
 
