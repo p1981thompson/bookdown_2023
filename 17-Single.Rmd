@@ -1,6 +1,10 @@
-#	Single case designs {#Single}
+#	 Single case designs {#Single}
 
-<!--- This level § heading is NOT RECOGNISED by Bookdown. I have tried cutting out sections of the chapter to identify what causes it to baulk but it is an inconsistent error. We may have to wait and fix this manually at a later stage if we can't get it to work. I can get the level 1 heading to be identified and compile if I just have the first 2 chunks of the chapter, but if I add more it throws inconsistent errors, and the index just misses this chapter. I have tried changing the chapter name. -->
+<!--- This level 1 heading is NOT RECOGNISED by Bookdown. I have tried cutting out sections of the chapter to identify what causes it to baulk but it is an inconsistent error. We may have to wait and fix this manually at a later stage if we can't get it to work. I can get the level 1 heading to be identified and compile if I just have the first 2 chunks of the chapter, but if I add more it throws inconsistent errors, and the index just misses this chapter. I have tried changing the chapter name. 
+Trying adding an extra white space before title - doesn't work.
+Tried modifying yml file to include full list of chapters - doesn't work
+Tried copying all code into word and then repasting back in - doesn't work
+Used kableextra for singlecasechart - didn't affect anything-->
 
 `r include_image("images/logo_alone_new.png")`
 
@@ -315,17 +319,17 @@ In most of the examples used here, the single case design could be embedded in n
 
 
 ```{r singlecasechart, echo=F, include=T,tab.cap="How single case designs deal with threats to study validity"}
-require(flextable)
+options(kableExtra.html.bsTable = T)
 Biases <- c('Spontaneous improvement','Practice effects','Regression to the mean','Noisy data (1)','Noisy data (2)','Selection bias', 'Placebo effects', 'Experimenter bias (1)','Experimenter bias (2)','Biased drop-outs','Low power','False positives due to p-hacking')
 Remedies <- c('Control outcome and/or baseline time period','Control outcome and/or baseline time period','Control outcome and/or baseline time period','Baseline period to establish variability','Outcomes with low measurement error','NA','-','Record sessions','Strictly specified protocol','Report on the number and characteristics of drop-outs','A priori power analysis; need for many observations','Registration of trial protocol')
 
 mydf<-data.frame(cbind(Biases,Remedies))
-ftable<-flextable(mydf)
-ftable <- set_caption(ftable, "How single case designs deal with threats to study validity")
-ftable <- autofit(ftable)
-ftable
+knitr::kable(mydf,escape = F, align = "c", booktabs = T,caption="How single case designs deal with threats to study validity") %>%
+  kable_styling(c("striped", "bordered"), latex_options = "striped", full_width = F) 
 ```
-We are not aware of specific evidence on this point, but it seems likely that the field of single case studies, just like other fields, is likely to suffer from problems of publication bias (Chapter \@ref(Pubbias)), whereby results are reported when an intervention is successful, but not when it fails. If studies are adequately powered - and they should be designed so that they are - then all results should be reported, including those which may be ambiguous or unwanted, so that we can learn from what doesn't work, as well as from what does.  
+
+
+We are not aware of specific evidence on this point, but it seems likely that the field of single case studies, just like other fields, is likely to suffer from problems of publication bias (Chapter \@ref(pubbias)), whereby results are reported when an intervention is successful, but not when it fails. If studies are adequately powered - and they should be designed so that they are - then all results should be reported, including those which may be ambiguous or unwanted, so that we can learn from what doesn't work, as well as from what does.  
 
 A final point, which cannot be stressed enough, is that when evaluating a given intervention, a single study is never enough. Practical constraints usually make it impossible to devise the perfect study that gives entirely unambiguous results: rather we should aim for our studies to reduce the uncertainty in our understanding of the effectiveness of intervention, with each study building on those that have gone before. With single case studies, it is common to report the raw data in the paper, in either numeric or graphical form, and this is particularly useful in allowing other researchers to combine results across studies to form stronger conclusions (see Chapter \@ref(litrev)). 
 
@@ -406,7 +410,7 @@ e. What would be the logistic challenges in implementing these changes?
 Identify a single case study in the published literature in your area and check it against the guidelines to see how much of the necessary information is provided.  
 This kind of exercise can be more useful than just reading the guidelines, as it forces the reader to read an article carefully and consider what the guidelines mean.  
 
-3. In the previous chapter, we described a study by @calder2021, which used a cross-over design to evaluate the effect of an intervention designed to improve grammatical morphology. This study also included probes to test mastery of untrained morphological endings. The trained structure was past tense -ed; a 'generalisation' probe was another verb ending, 3rd person singular -s, and a control probe was possessive -s. Before studying Figure \@ref(fig:Calderplus) make a note of your predictions about what you might expect to see with these additional probes. Once you have studied the Figure, consider whether you think the inclusion of the probes has strengthened your confidence in the conclusion that the intervention is effective.  
+3. In the previous chapter, we described a study by @calder2021, which used a cross-over design to evaluate the effect of an intervention designed to improve grammatical morphology. This study also included probes to test mastery of untrained morphological endings. The trained structure was past tense -ed; a 'generalisation' probe was another verb ending, 3rd person singular -s, and a control probe was possessive -s. Before studying Figure \@ref(fig:Calderplus) make a note of your predictions about what you might expect to see with these additional probes. 
 
 ```{r Calderplus, echo=F,fig.cap = "Mean % correct for all 3 probes in delayed cross-over study by Calder et al, 2021 (data plotted from Calder et al's Table 2)."}
 
@@ -454,4 +458,5 @@ legend("topright",
   inset = c(0.01, 0.01))
 ```
 
+Once you have studied the Figure, consider whether you think the inclusion of the probes has strengthened your confidence in the conclusion that the intervention is effective.  
 
