@@ -371,21 +371,24 @@ Researchers are often shocked when they first do a power analysis, to find that 
 
 - If the necessary sample size is too large for you to achieve, it may be worth considering forming a consortium by joining forces with other researchers. Kate Button has advocated for the adoption of "team science" in psychology, recognising that many questions require larger samples than are typically available in any one centre [@button2020]. A particularly innovative step has been to encourage consortia for undergraduate research projects, which, she argues, not only allows for meaningful research to be done, but also provides much better training in research methods than the conventional set-up, where each student is supposed to do an original piece of research with limited resources [@button2018].  
 - People tend to think that the only way to increase power is by getting a larger sample size, but there are other options. You may be able to improve the effect size of your outcomes by careful consideration of reliability and sensitivity of the outcome measure. Remember, effect size is the difference in means divided by the standard deviation: if you can reduce the standard deviation by minimising random noise in your outcome measure, you will increase the effect size.  
-- In Chapter \@ref(phacking), we will consider how use of multiple outcome measures can be used to improve statistical power, provided measures are taken to avoid increasing false positive. 
-- It is worth consulting with a statistician about the optimal research design. A RCT with comparison of intervention and controls groups is not the only possible approach. Some designs are more efficient than others for showing effects of interest: see especially Chapter \@ref(crossover) and Chapter \@ref(singlecase).  
+- In Chapter \@ref(phacking), we will consider how use of multiple outcome measures can be used to improve statistical power, provided measures are taken to avoid increasing false positives. 
+- It is worth consulting with a statistician about the optimal research design. A RCT with comparison of intervention and controls groups is not the only possible approach. Some designs are more efficient than others for showing effects of interest: see especially Chapter \@ref(crossover) and Chapter \@ref(Single).  
 
 
 ## Class Exercises 
 The teaching of statistics is being transformed by the internet. There are some excellent interactive websites to help you gain a more intuitive sense of some of the statistical concepts in this chapter. For starters, we'd recommend [this website](https://www.zoology.ubc.ca/~whitlock/Kingfisher/SamplingNormal.htm) which focuses on sampling from a normally distributed population. You can vary the mean and standard deviation, as well as the sample size. The examples are from zoology, but the ideas apply much more broadly.  This is just one of [several apps in a set](https://whitlockschluter.zoology.ubc.ca/stats-visualizations) that is designed to help understand statistics.
 
 
-There are several interactive websites for calculating power for simple experimental designs. They vary in the level of statistical background that they require, but you should be able to use them to work out the required sample size for different scenarios. Have a look at the sites listed below, and see whether, for each one, you can understand the graphics, and whether you can work out the answer for the following problems, each of which is just comparing an intervention group and a control group in a two-sided t-test:  
+There are several interactive websites for calculating power for simple experimental designs. They vary in the level of statistical background that they require, but you should be able to use them to work out the required sample size for different scenarios. Have a look at these sites:  
+[Power Calculator](https://egap.shinyapps.io/Power_Calculator/)   
+[Cohen's d](https://shiny.ieis.tue.nl/d_p_power/)   
+
+See whether for each site you can understand the graphics, and whether you can work out the answer for the following problems, each of which is just comparing an intervention group and a control group in a two-sided t-test:  
 - You have an expected effect size of 0.3 and you want to work out the sample size to get power of .8 with $\alpha$ set to .05.  
 - You can recruit 50 participants per group; you expect an effect size of 0.3. What is the power to detect this effect,  with $\alpha$ set to .05?  
 - What effect size would you be able to detect with 80% power and a sample size of 30 per group, with $\alpha$ set to .05?  
-[Power Calculator](https://egap.shinyapps.io/Power_Calculator/)  
-[Cohen's d etc](https://shiny.ieis.tue.nl/d_p_power/)  
 
+ 
 More generally, it's well worth Googling for information if there are statistical terms or concepts you are struggling with. Sometimes the information you find is just confusing and too technical, but, as illustrated above, there are also excellent teaching resources out there.  
 
 
