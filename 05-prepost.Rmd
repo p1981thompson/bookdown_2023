@@ -13,7 +13,7 @@ library(knitr)
 
 At first glance, assessing an intervention seems easy. Having used the information in Chapter \@ref(reliability) to select appropriate measures, you administer these to a group of people before starting the intervention, and again after it is completed, and then look to see if there has been meaningful change. This is what we call a pre-post design, and it almost always gives a misleadingly rosy impression of how effective the intervention is. The limitations of such studies have been well-understood in medicine for decades, yet in other fields they persist, perhaps because the problems are not immediately obvious.  
 
-```{r trogchangedata,echo=FALSE,message=FALSE,warning=FALSE,fig.cap='TROG data from a study conducted by @bishop2006',fig.width=8,fig.height=4}
+```{r trogchangedata,echo=FALSE,message=FALSE,warning=FALSE,fig.cap='TROG data from a study conducted by Bishop et al 2006',fig.width=8,fig.height=4}
 require(reshape2)
 # Data for means and SD from the article, time 1 and time 2 TROG
 # First block, commented out, includes data from 'dropout' cases - originally plotted these as well
