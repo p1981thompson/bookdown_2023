@@ -111,7 +111,7 @@ Results are shown in Figure \@ref(fig:calderfig).
 ```{r calderfig, echo=F,fig.cap = "Mean % correct in delayed cross-over study by Calder et al, 2021 (data plotted from Calder et al's Table 2)."}
 
 
-cdat <- read.csv("data/Calder/calder_xover.csv")
+cdat <- read.csv("data/calder_xover.csv")
 wantrows <- c(1,5,7,9,13,15)
 cdat <-cdat[wantrows,]
 #reorder cols to facilitate conversion

@@ -415,7 +415,7 @@ This kind of exercise can be more useful than just reading the guidelines, as it
 ```{r Calderplus, echo=F,fig.cap = "Mean % correct for all 3 probes in delayed cross-over study by Calder et al, 2021 (data plotted from Calder et al's Table 2)."}
 
 
-cdat <- read.csv("data/Calder/calder_xover.csv")
+cdat <- read.csv("data/calder_xover.csv")
 wantrows <- c(1,5,7,9,13,15)
 cdat <-cdat[wantrows,]
 #reorder cols to facilitate conversion

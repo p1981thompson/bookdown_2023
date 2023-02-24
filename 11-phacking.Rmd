@@ -100,7 +100,7 @@ The MEff statistic was developed in the field of genetics by @cheverud2001. It i
 
 ```{r MEff-alphas,echo=F, message=FALSE, results='asis', warnings=FALSE}
 options(kableExtra.html.bsTable = T)
-meff<-read.csv('Meff_alphas.csv')
+meff<-read.csv('Data/Meff_alphas.csv')
 meff<-meff[,c(1,2,4,6,8,10,12)]
 knitr::kable(meff,escape = F, align = "c", booktabs = T, caption = 'Adjusted alphas for multiple (N) correlated variables to achieve false positive rate of 1 in 20') %>%
   kable_styling(c("striped", "bordered"), latex_options = "striped", full_width = F) %>%
